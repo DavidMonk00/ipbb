@@ -303,7 +303,7 @@ def git(ictx, repo, branch_or_tag, revision, dest, depth):
         sh.git(*lCloneArgs, _out=sys.stdout, _cwd=ictx.srcdir)
         cprint('Checking out revision [blue]{}[/blue]'.format(revision))
         try:
-            lFetchArgs = ['fetch', 'origin', revision, '-q']
+            lFetchArgs = ['fetch', 'origin', '-q']
             if depth is not None:
                 lFetchArgs += [f'--depth={depth}']
             sh.git(*lFetchArgs, _out=sys.stdout, _cwd=lRepoLocalPath)
